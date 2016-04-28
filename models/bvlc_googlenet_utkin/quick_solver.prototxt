@@ -1,0 +1,15 @@
+net: "models/bvlc_googlenet_utkin/train_val.prototxt"
+test_iter: 2000
+test_interval: 5000
+test_initialization: true
+display: 1000
+average_loss: 1000
+base_lr: 0.01
+lr_policy: "poly"
+power: 0.5
+max_iter: 20000000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 100000
+snapshot_prefix: "models/bvlc_googlenet_utkin/bvlc_googlenet_utkin_quick"
+solver_mode: GPU
