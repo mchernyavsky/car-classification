@@ -49,7 +49,7 @@ layer {
 #  }
   data_param {
     source: "datasets/utkin/data/lmdb/utkin_val_lmdb"
-    batch_size: 25
+    batch_size: 10
     backend: LMDB
   }
 }
@@ -2402,7 +2402,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 25
+    num_output: 252
     weight_filler {
       type: "xavier"
     }
