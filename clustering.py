@@ -80,24 +80,8 @@ def get_data(filename):
     return np.array(data)
 
 
-   
-    
-
-
 y = [float(e)/max(y) for e in y]
-def show_clusters(data, y):
-    model = TSNE(n_components=2, random_state=0)
-    np.set_printoptions(suppress=True)
-    X = model.fit_transform(data[1:])
-    print "X.shape = ", X.shape
-    print "y.shape = ", y.shape
-    cm = plt.cm.get_cmap('Accent')
-    plt.scatter(X[:,0], X[:,1], c=y, cmap=cm)
-    plt.axis('off')
-    plt.show()
-    plt.savefig("Clusters.png", dpi=600)
-    
-    
+
     
 show_clusters(data, y)
 
@@ -109,6 +93,8 @@ labels.classes_
 labels = le.transform(y)
 labels
 data = get_data("datasets/utkin/data/train/fc7_feature_txt_total.txt")
+
+
 def extractFeature(imageList, net):
     y = []
     transformer = caffe.io.Transformer({'data': net.blobs['data'].data.shape})
@@ -132,8 +118,6 @@ def extractFeature(imageList, net):
 y = extractFeature(images_list, net)
     
   
-    
-show_clusters(X, labs)
 def show_clusters(data, y):
     model = TSNE(n_components=2, random_state=0)
     np.set_printoptions(suppress=True)
@@ -145,14 +129,7 @@ def show_clusters(data, y):
     plt.axis('off')
     plt.show()
     plt.savefig("Clusters.png", dpi=600)
-    
 
-X = []
-Y = []
-for k, g in groupby(xy, lambda x: x[1]):
-     p = list(g)
-     X += p
-     Y += [k] * len(p)
-     
 
+show_clusters(X, labs)
     
